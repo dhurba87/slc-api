@@ -42,6 +42,7 @@ class HomeController < ApplicationController
         data.each_with_index do |dat, index|
           arr_data << { data_index[index] => dat.split(',') }
         end
+        data.shift(1).pop
         render json: {status: :success, data: arr_data }
       end
     end
